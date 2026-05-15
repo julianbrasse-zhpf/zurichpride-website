@@ -16,10 +16,10 @@
 			"bucket_name": "zurichpride","preview_bucket_name": "zurichpride",
 		},
 	],
-	// Worker Loader for plugin sandboxing
-	"worker_loaders": [
-		{
-			"binding": "LOADER",
-		},
-	],
+// Worker Loader for plugin sandboxing
+//	"worker_loaders": [
+//		{
+//			"binding": "LOADER",
+//		},
+//	],
 }
