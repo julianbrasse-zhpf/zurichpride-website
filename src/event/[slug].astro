@@ -1,0 +1,28 @@
+---
+import { getEmDashCollection } from "emdash";
+
+// Fetch all published entries from the events collection
+const { entries: events } = await getEmDashCollection("events");
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Zurich Pride Events</title>
+  </head>
+  <body>
+    <main>
+      <h1>Upcoming Events</h1>
+      
+      <div class="event-grid">
+        {events.map((event) => (
+          <article class="event-card">
+            {/* Make sure these data fields match what you created in the CMS */}
+            <h2>{event.data.title}</h2>
+            <p>{event.data.date}</p>
+          </article>
+        ))}
+      </div>
+    </main>
+  </body>
+</html>
