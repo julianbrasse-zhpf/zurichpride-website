@@ -3,11 +3,15 @@ import { getEmDashEntry } from "emdash";
 
 const { slug } = Astro.params;
 
-const event = await getEmDashEntry("events", slug);
+// Destructure the result to extract the actual entry and the cache instructions
+const { entry: event, cacheHint } = await getEmDashEntry("events", slug);
 
 if (!event) {
   return Astro.redirect("/404");
 }
+
+// Enable automatic cache invalidation for this route
+Astro.cache.set(cacheHint);
 ---
 
 <html lang="en">
