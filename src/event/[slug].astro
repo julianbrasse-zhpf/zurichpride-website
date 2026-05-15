@@ -1,28 +1,27 @@
 ---
-import { getEmDashCollection } from "emdash";
+import { getEmDashEntry } from "emdash";
 
-// Fetch all published entries from the events collection
-const { entries: events } = await getEmDashCollection("events");
+const { slug } = Astro.params;
+
+const event = await getEmDashEntry("events", slug);
+
+if (!event) {
+  return Astro.redirect("/404");
+}
 ---
 
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Zurich Pride Events</title>
+    <title>{event.data.title} | Zurich Pride</title>
   </head>
   <body>
     <main>
-      <h1>Upcoming Events</h1>
-      
-      <div class="event-grid">
-        {events.map((event) => (
-          <article class="event-card">
-            {/* Make sure these data fields match what you created in the CMS */}
-            <h2>{event.data.title}</h2>
-            <p>{event.data.date}</p>
-          </article>
-        ))}
-      </div>
+      <article>
+        <h1>{event.data.title}</h1>
+        {/* Adjust these fields based on what you created in the CMS */}
+        <p>Date: {event.data.date}</p>
+      </article>
     </main>
   </body>
 </html>
