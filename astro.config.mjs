@@ -27,14 +27,14 @@ export default defineConfig({
 	fonts: [
 		{
 			provider: fontProviders.google(),
-			name: "Inter",
+			name: "Ubuntu",
 			cssVariable: "--font-sans",
 			weights: [400, 500, 600, 700],
 			fallbacks: ["sans-serif"],
 		},
 		{
 			provider: fontProviders.google(),
-			name: "JetBrains Mono",
+			name: "Ubuntu Mono",
 			cssVariable: "--font-mono",
 			weights: [400, 500],
 			fallbacks: ["monospace"],
