@@ -12,7 +12,7 @@ export default defineConfig({
     locales: ["de", "en", "fr", "it"],
     defaultLocale: "de",
   }
-})
+});
 
 export default defineConfig({
 	output: "server",
