@@ -5,6 +5,14 @@ import { formsPlugin } from "@emdash-cms/plugin-forms";
 import { webhookNotifierPlugin } from "@emdash-cms/plugin-webhook-notifier";
 import { defineConfig, fontProviders } from "astro/config";
 import emdash from "emdash/astro";
+import { defineConfig } from "astro/config"
+
+export default defineConfig({
+  i18n: {
+    locales: ["de", "en", "fr", "it"],
+    defaultLocale: "de",
+  }
+})
 
 export default defineConfig({
 	output: "server",
