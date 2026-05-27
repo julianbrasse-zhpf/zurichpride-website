@@ -9,7 +9,7 @@ if (!slug) {
 	return Astro.redirect("/404");
 }
 
-const { entry: page, cacheHint } = await getEmDashEntry("events", slug);
+const { entry: event, cacheHint } = await getEmDashEntry("events", slug);
 
 if (!event) {
 	return Astro.redirect("/404");
