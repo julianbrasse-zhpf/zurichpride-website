@@ -1,4 +1,3 @@
-/** Resolved media reference from getSiteSettings() */
 export interface MediaReference {
 	mediaId: string;
 	alt?: string;
@@ -12,8 +11,8 @@ export interface BlogSiteIdentitySettings {
 	favicon?: MediaReference;
 }
 
-const DEFAULT_SITE_TITLE = "My Blog";
-const DEFAULT_SITE_TAGLINE = "Thoughts, stories, and ideas.";
+const DEFAULT_SITE_TITLE = "Zurich Pride";
+const DEFAULT_SITE_TAGLINE = "Der grösste queere Anlass der Schweiz.";
 
 export function resolveBlogSiteIdentity(settings?: BlogSiteIdentitySettings) {
 	return {

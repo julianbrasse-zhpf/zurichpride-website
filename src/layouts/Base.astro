@@ -42,10 +42,10 @@ const {
 } = Astro.props;
 const { siteTitle, siteTagline, siteLogo } = resolveBlogSiteIdentity(await getSiteSettings());
 // If title already includes site title (from getSeoMeta), use as-is
-const fullTitle = title.includes(siteTitle) ? title : `${title} — ${siteTitle}`;
+const fullTitle = title.includes(siteTitle) ? title : `${title} // ${siteTitle}`;
 
 // Fetch primary menu defined in seed
-const menu = await getMenu("primary");
+const menu = await getMenu("navigation");
 
 // Optional "social" menu. If a site defines a `social` menu in its seed,
 // it'll render in the footer's "Connect" column. Otherwise that column
@@ -110,14 +110,6 @@ const isLoggedIn = !!Astro.locals.user;
 					}
 				</a>
 				<div class="nav-right">
-					<LiveSearch
-						placeholder="Search..."
-						class="site-search"
-						inputClass="site-search-input"
-						resultsClass="site-search-results"
-						resultClass="site-search-result"
-						collections={["posts", "pages"]}
-					/>
 					<div class="nav-links">
 						{
 							menu?.items.map((item) => (
@@ -127,6 +119,14 @@ const isLoggedIn = !!Astro.locals.user;
 							))
 						}
 					</div>
+					<LiveSearch
+						placeholder="Search..."
+						class="site-search"
+						inputClass="site-search-input"
+						resultsClass="site-search-results"
+						resultClass="site-search-result"
+						collections={["posts", "pages"]}
+					/>
 				</div>
 				{
 					isLoggedIn && (
