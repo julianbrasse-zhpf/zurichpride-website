@@ -18,18 +18,12 @@ if (!event) {
 if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<title>{event.data.title} | Zurich Pride</title>
-	</head>
-	<body>
-		<main>
-			<article>
-				<h1>{event.data.title}</h1>
-				{/* Adjust these fields based on what you created in the CMS */}
-				<p>Date: {event.data.date}</p>
-			</article>
-		</main>
-	</body>
-</html>
+<Base
+	title={event.data.title}
+	content={{ collection: "pages", id: page.data.id, slug }}
+>
+	<article>
+		<h1>{event.data.title}</h1>
+		<p>Date: {event.data.date}</p>
+	</article>
+</Base>
