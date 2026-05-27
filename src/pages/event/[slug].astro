@@ -20,7 +20,7 @@ if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 
 <Base
 	title={event.data.title}
-	content={{ collection: "pages", id: page.data.id, slug }}
+	content={{ collection: "events", id: event.data.id, slug }}
 >
 	<article>
 		<h1>{event.data.title}</h1>
