@@ -25,8 +25,10 @@ export default defineConfig({
 			authProviders: [google(), github()],
 			database: d1({ binding: "DB", session: "auto" }),
 			storage: r2({ binding: "MEDIA" }),
-			// plugins: [forms],
-			// sandboxed: [webhookNotifier],
+			plugins: [],
+			// [forms]
+			sandboxed: [],
+			// [webhookNotifier]
 			sandboxRunner: sandbox(),
 			marketplace: "https://marketplace.emdashcms.com",
 		}),
