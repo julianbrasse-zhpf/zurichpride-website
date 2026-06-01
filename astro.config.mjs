@@ -22,7 +22,7 @@ export default defineConfig({
 			storage: r2({ binding: "MEDIA" }),
 			plugins: [],
 			sandboxed: [],
-			sandboxRunner: "@emdash-cms/sandbox-cloudflare",
+			sandboxRunner: sandbox(),
 			marketplace: "https://marketplace.emdashcms.com",
 		}),
 	],
