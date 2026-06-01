@@ -21,3 +21,30 @@ if (Astro.cache?.enabled) Astro.cache.set(cacheHint);
 		<a href="https://pride-festival-zurich.shop.bookinea.app/de/c/party-tickets-1804">Pride Party Tickets</a>
 	</div>
 </Base>
+
+<style>
+main {
+	padding: 1vw;
+	display: flex;
+	justify-content: center;
+	gap: 2vw;
+}
+
+main div {
+	min-width: 50vw;
+	padding: 1vw;
+	display: flex;
+	flex-direction: column;
+	border-radius: 1vw;
+	background-color: #eee;
+	box-shadow: 0 0 1vw;
+}
+
+main a {
+	display: inline-block;
+	padding: 1vw;
+	border-radius: 1vw;
+	color: white;
+	background-color: red;
+}
+</style>
